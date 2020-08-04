@@ -120,8 +120,6 @@ export default {
             this.error = err;
           });
           if (result) {
-            console.log(result);
-            console.dir(result);
             this.gallerySearchListDetails = result;
             this.totalItems = this.gallerySearchListDetails.length;
             this.searchFlag = true;
@@ -129,14 +127,11 @@ export default {
       },
       
        showDetails(value) {
-        fetchShowDetails(value).then(result => {
-            console.log(result);
-                console.dir(result);
+          fetchShowDetails(value).then(result => {
                 this.showDetails = result;
                 this.totalItems = this.showDetails.length;
                 this.searchFlag = false;
                 this.showDetailsFlag = !this.showDetailsFlag;
-        
             }).catch(err => {
             this.error = err;
           });
