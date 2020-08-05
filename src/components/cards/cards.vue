@@ -30,9 +30,6 @@ export default {
     name: {
       type: String
     },
-    downloadImage: {
-      type: String
-    },
     imageSource: {
       type: String
     },
@@ -44,33 +41,6 @@ export default {
     }
   },
   methods: {
-    async downLoadImage(res) {
-      const a = document.createElement("a");
-      a.href = await this.toDataURL(res);
-      a.download = "";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    },
-    async toDataURL(url) {
-      return fetch(url)
-        .then(response => {
-          return response.blob();
-        })
-        .then(blob => {
-          return URL.createObjectURL(blob);
-        });
-    },
-    detailsRouting(id) {
-      console.log(id);
-      this.$router.push({
-          path: '/',
-          params: {
-            showID: id
-          }
-        })
-
-    }
   }
 };
 </script>

@@ -7,8 +7,8 @@ import AppCard from "@/components/cards/cards.vue";
 describe("In app-card Component", () => {
   let appCardWrapper;
   beforeEach(() => {
-    const imageSource = "https://www.themealdb.com/images/category/vegan.png";
-    const downloadImage = "https://www.themealdb.com/images/category/vegan.png";
+    const imageSource = "http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg";
+    //const downloadImage = "https://www.themealdb.com/images/category/vegan.png";
     const auther = "Hitler";
     Vue.use(Vuetify);
     Vue.use(VueRouter);
@@ -16,7 +16,7 @@ describe("In app-card Component", () => {
       Vue,
       propsData: {
         imageSource: imageSource,
-        downloadImage: downloadImage,
+        //downloadImage: downloadImage,
         auther: auther
       }
     });
@@ -47,7 +47,7 @@ describe("In app-card Component", () => {
 
   it("check props", () => {
     expect(appCardWrapper.vm.imageSource).toBe(
-      "https://www.themealdb.com/images/category/vegan.png"
+      "http://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg"
     );
   });
 });

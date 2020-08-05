@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">41.67% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/15</span>
+                <span class='fraction'>5/12</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">12.5% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>1/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">38.46% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/13</span>
+                <span class='fraction'>5/10</span>
             </div>
         
             
@@ -84,35 +84,23 @@
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -126,37 +114,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import httpClient from "@/services/common/http-client/http-client.js";
 &nbsp;
-const getgalleryData = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >  return httpClient.get("/v2/list").then(<span class="fstat-no" title="function not covered" >re</span>s =&gt; <span class="cstat-no" title="statement not covered" >res.data)</span>;</span>
+const fetchShowList = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >  return httpClient.get("/shows").then(<span class="fstat-no" title="function not covered" >re</span>s =&gt; <span class="cstat-no" title="statement not covered" >res.data)</span>;</span>
 };
 &nbsp;
-const getItemsPerPage = <span class="fstat-no" title="function not covered" >(p</span>ageNo, limitValue) =&gt; {
-<span class="cstat-no" title="statement not covered" >  return httpClient</span>
-    .get("/v2/list?page=" + pageNo + "&amp;limit=" + limitValue)
+const fetchShowDetails = (value) =&gt; {
+  return httpClient
+    .get("/shows/" + value)
     .then(<span class="fstat-no" title="function not covered" >re</span>s =&gt; <span class="cstat-no" title="statement not covered" >res.data)</span>;
 };
 &nbsp;
-const getNextAndPreviousStatus = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >  return httpClient.get("/v2/list?page=2").then(<span class="fstat-no" title="function not covered" >re</span>s =&gt; <span class="cstat-no" title="statement not covered" >res.headers.link)</span>;</span>
+const backToList = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >  return httpClient.get("/shows").then(<span class="fstat-no" title="function not covered" >re</span>s =&gt; <span class="cstat-no" title="statement not covered" >res.headers.link)</span>;</span>
 };
 &nbsp;
-const getNextResponse = <span class="fstat-no" title="function not covered" >(p</span>ageNo, limit) =&gt; {
+const fetchSearchResults = <span class="fstat-no" title="function not covered" >(v</span>alue) =&gt; {
 <span class="cstat-no" title="statement not covered" >  return httpClient</span>
-    .get("/v2/list?page=" + pageNo + "&amp;limit=" + limit)
+    .get("/search/shows?q=" + value)
     .then(<span class="fstat-no" title="function not covered" >re</span>s =&gt; <span class="cstat-no" title="statement not covered" >res.data)</span>;
 };
 &nbsp;
-const getPreviousResponse = <span class="fstat-no" title="function not covered" >(p</span>ageNo, limit) =&gt; {
-<span class="cstat-no" title="statement not covered" >  return httpClient</span>
-    .get("/v2/list?page=" + pageNo + "&amp;limit=" + limit)
-    .then(<span class="fstat-no" title="function not covered" >re</span>s =&gt; <span class="cstat-no" title="statement not covered" >res.data)</span>;
-};
 export {
-  getgalleryData,
-  getItemsPerPage,
-  getNextAndPreviousStatus,
-  getNextResponse,
-  getPreviousResponse
+  fetchShowList,
+  fetchShowDetails,
+  backToList,
+  fetchSearchResults
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -165,7 +147,7 @@ export {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Jul 31 2020 16:17:01 GMT+0530 (India Standard Time)
+                at Wed Aug 05 2020 19:37:30 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="..\..\..\prettify.js"></script>
