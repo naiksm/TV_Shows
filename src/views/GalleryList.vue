@@ -4,7 +4,7 @@
       <v-row align="center">
         <v-col class="d-flex" cols="12" sm="6">
           <input class="search" v-model="searchKeyword" placeholder="Search for TV shows">
-          <v-btn class="searchbtn" @click = "searchList(searchKeyword)">Search</v-btn>
+          <v-btn :disabled="!searchKeyword" class="searchbtn" @click = "searchList(searchKeyword)">Search</v-btn>
         </v-col>
       </v-row>
       <v-row v-if="!searchFlag && !showDetailsFlag && galleryListDetails.length">
@@ -70,6 +70,10 @@
           <v-btn @click = "backToList()"> Back to Show List</v-btn>
         </v-flex>
       </v-layout>
+      </v-row>
+      
+      <v-row v-if="!gallerySearchListDetails.length">
+        <h1>No shows found </h1>
       </v-row>
     </v-container>
   </div>
