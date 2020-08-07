@@ -7,6 +7,7 @@
       lazy-src="imageSource"
       :src="imageSource"
       :contain="true"
+      :alt="'No preview available'"
     >
       <template v-slot:placeholder>
         <v-row class="fill-height ma-0" align="center" justify="center">
@@ -19,7 +20,7 @@
       
     </v-img>
     <v-card-subtitle align="center" class="pb-0">{{ name }}</v-card-subtitle>
-    <v-card-subtitle align="center" class="pb-0">Rating : {{ rating }}</v-card-subtitle>
+    <v-card-subtitle align="center" class="pb-0">Rating : {{ rating ? rating : 'Not Available' }}</v-card-subtitle>
   </v-card>
 </template>
 
